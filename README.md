@@ -1,2 +1,15 @@
 # product-search-ranking
-Built a two-stage product search system on the Amazon ESCI dataset. Stage one compares BM25, dense and hybrid retrieval. Stage two re-ranks candidates with LightGBM and a cross-encoder. Evaluated on NDCG and latency, and served through FastAPI in Docker.
+
+Two-stage product search on the Amazon Shopping Queries (ESCI) dataset.
+
+Stage 1 retrieves candidates with BM25, dense retrieval and a hybrid of both. Stage 2 re-ranks them with LightGBM (LambdaRank) and a cross-encoder. Each setup is compared on NDCG@10, Recall@100, MRR and latency.
+
+**Status: work in progress.** Results will be added here once experiments have been run.
+
+## Dataset
+
+[Amazon Shopping Queries Dataset (ESCI)](https://github.com/amazon-science/esci-data). The data is not included in this repo and has its own licence.
+
+## Licence
+
+Code is MIT licensed. See [LICENSE](LICENSE).
