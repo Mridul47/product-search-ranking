@@ -1,0 +1,39 @@
+# data and large artifacts (never committed)
+data/
+artifacts/
+*.parquet
+*.npy
+*.faiss
+*.onnx
+*.pt
+*.bin
+*.safetensors
+
+# secrets
+.env
+
+# experiment tracking
+wandb/
+mlruns/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# notebooks
+.ipynb_checkpoints/
+
+# editor and os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# personal notes
+PLAN.md
