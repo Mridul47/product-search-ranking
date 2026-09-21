@@ -1,0 +1,23 @@
+project:
+  name: product-search-ranking
+  seed: 42
+
+paths:
+  data_dir: data # overridden by DATA_DIR env var if set
+  artifact_dir: artifacts # overridden by ARTIFACT_DIR env var if set
+
+data:
+  locale: us
+  small_version: 1
+  val_fraction: 0.1
+  # all US products that appear in small_version examples (train + test)
+  corpus_rule: small_version_products
+
+relevance:
+  # KDD Cup 2022 ESCI gains, used for NDCG
+  gains: { E: 1.0, S: 0.1, C: 0.01, I: 0.0 }
+  # integer targets for LGBMRanker; label_gain maps them back to the gains above
+  lgbm_labels: { I: 0, C: 1, S: 2, E: 3 }
+
+logging:
+  level: INFO
