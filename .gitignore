@@ -1,6 +1,6 @@
 # data and large artifacts (never committed)
-data/
-artifacts/
+/data/
+/artifacts/
 *.parquet
 *.npy
 *.faiss
