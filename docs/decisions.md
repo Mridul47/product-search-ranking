@@ -124,3 +124,21 @@ only ever sees products that were judged relevant enough to assess.
 Cost: some of those negatives are actually relevant, so the training signal
 contains false negatives. This is standard practice in learning to rank, and it
 is recorded in the README limitations.
+
+## D10: Text truncation limit
+
+Product text is truncated at 256 tokens for the bi-encoder. BM25 indexes the
+full text.
+
+Measured on a 20,000 product sample with the MiniLM tokenizer: median 142
+tokens, p95 401, p99 511. 23.4% of products exceed 256 tokens and 1.0% exceed 512.
+
+Reason: fields are ordered title, brand, colour, bullets, so truncation removes
+bullet points rather than identifying information. all-MiniLM-L6-v2 was trained
+at 256 tokens, and encoding cost grows faster than linearly with length, which
+matters when the corpus is embedded on free GPU quota.
+
+Cost: for the 23.4% of products with longer text, part of the bullet content is
+invisible to dense retrieval but BM25 can still find it. This asymmetry is a
+candidate explanation if dense retrieval underperforms, so Phase 5 compares 256
+against 384 on a subset and records recall and encoding time for each.
