@@ -142,3 +142,6 @@ Cost: for the 23.4% of products with longer text, part of the bullet content is
 invisible to dense retrieval but BM25 can still find it. This asymmetry is a
 candidate explanation if dense retrieval underperforms, so Phase 5 compares 256
 against 384 on a subset and records recall and encoding time for each.
+
+Titles are never affected: measured on the same sample, title length is median
+24 tokens, p99 59, maximum 144. Truncation removes bullet content only.
