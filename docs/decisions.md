@@ -145,3 +145,21 @@ against 384 on a subset and records recall and encoding time for each.
 
 Titles are never affected: measured on the same sample, title length is median
 24 tokens, p99 59, maximum 144. Truncation removes bullet content only.
+
+## D11: Reported metrics and cutoffs
+
+NDCG@10 is the headline metric. NDCG@5, Recall@100 and MRR are reported beside
+it in the same table for every setup.
+
+Reason: queries have a median of 16 judged products of which 7 are exact, so
+NDCG@10 has limited room to separate methods. NDCG@5 has fewer slots than exact
+products for many queries, which makes ordering matter more and differences
+between methods clearer. NDCG@10 stays the headline because published ESCI work
+reports it.
+
+This is fixed before any experiment runs so that no cutoff can be chosen after
+seeing which one favours a given method. Every reported table shows all four
+numbers, including for setups that lose.
+
+Recall counts exact products only (D6), and queries with no exact product are
+excluded from Recall and MRR (D7).
