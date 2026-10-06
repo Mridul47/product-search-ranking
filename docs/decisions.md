@@ -163,3 +163,23 @@ numbers, including for setups that lose.
 
 Recall counts exact products only (D6), and queries with no exact product are
 excluded from Recall and MRR (D7).
+
+## D12: Evaluation modes and what each number means
+
+Judged-set mode ranks only the products that have a judgement. End-to-end mode scores whatever the pipeline returns from the whole corpus, and unjudged products get gain 0 (D8). Every table states which mode its numbers came from.
+
+In judged-set mode, Recall@100 is close to 1.0 for every method by construction. A query has a median of 16 judged products, so nearly all of them fit inside the top 100. The tables still include it so that all four numbers appear together, as the D11 rule requires, but it cannot separate methods in this mode. The retrieval comparison uses end-to-end Recall@100.
+
+Always read judged-set NDCG next to the random and title-length baselines from the same mode. Random ordering already scores well when most judged products are relevant.
+
+Measured on the validation split (2,089 queries, seed 42):
+
+| setup                       | mode       | NDCG@5 | NDCG@10 | Recall@100 | MRR     |
+| --------------------------- | ---------- | ------ | ------- | ---------- | ------- |
+| oracle                      | judged     | 1.0000 | 1.0000  | 1.0000     | 1.0000  |
+| random                      | judged     | 0.5004 | 0.5742  | 0.9999     | 0.6142  |
+| title length, longest first | judged     | 0.4716 | 0.5559  | 0.9999     | 0.5664  |
+| random draw, 100 documents  | end-to-end | 0.0000 | 0.0000  | 0.00006    | 0.00001 |
+
+Any judged-set result is read against the random row. Judged-set Recall@100 is
+below 1.0 only because a few queries have more than 100 judged products.
