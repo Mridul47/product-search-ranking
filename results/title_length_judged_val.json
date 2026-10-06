@@ -1,0 +1,24 @@
+{
+  "name": "title_length_judged_val",
+  "written_at": "2026-10-06T00:01:30+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "setup": "title_length",
+    "mode": "judged",
+    "split": "val",
+    "seed": 42
+  },
+  "metrics": {
+    "ndcg@5": 0.47158940308823133,
+    "ndcg@10": 0.555916423060568,
+    "recall@100": 0.9998909295829268,
+    "mrr": 0.5663857391422893,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/rfpn72dg",
+  "git": {
+    "commit": "eec22fede73bb0fd23ba837aa4a09c0893bd8fbc",
+    "uncommitted_changes": true
+  }
+}
