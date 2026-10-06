@@ -1,0 +1,25 @@
+{
+  "name": "random_corpus_end_to_end_val",
+  "written_at": "2026-10-06T00:02:04+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "setup": "random_corpus",
+    "mode": "end_to_end",
+    "split": "val",
+    "seed": 42,
+    "depth": 100
+  },
+  "metrics": {
+    "ndcg@5": 0.0,
+    "ndcg@10": 0.0,
+    "recall@100": 5.983724269985639e-05,
+    "mrr": 1.4959310674964098e-05,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/4yfzl2lk",
+  "git": {
+    "commit": "eec22fede73bb0fd23ba837aa4a09c0893bd8fbc",
+    "uncommitted_changes": true
+  }
+}

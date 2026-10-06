@@ -1,0 +1,24 @@
+{
+  "name": "random_judged_val",
+  "written_at": "2026-10-06T00:00:58+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "setup": "random",
+    "mode": "judged",
+    "split": "val",
+    "seed": 42
+  },
+  "metrics": {
+    "ndcg@5": 0.5004043009617698,
+    "ndcg@10": 0.5741702204665672,
+    "recall@100": 0.9998848701153117,
+    "mrr": 0.6141950187618601,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/2mocjhqb",
+  "git": {
+    "commit": "eec22fede73bb0fd23ba837aa4a09c0893bd8fbc",
+    "uncommitted_changes": true
+  }
+}
