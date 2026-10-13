@@ -6,6 +6,7 @@ import json
 import time
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass
+from functools import lru_cache
 from pathlib import Path
 
 import bm25s
@@ -13,6 +14,11 @@ import numpy as np
 import Stemmer
 
 META_FILE = "esci_bm25_meta.json"
+
+
+@lru_cache(maxsize=1)
+def _english_stemmer():
+    return Stemmer.Stemmer("english")
 
 
 @dataclass(frozen=True)
@@ -27,7 +33,7 @@ class TokenizerSpec:
         return {
             "lower": True,
             "stopwords": "en" if self.stopwords else None,
-            "stemmer": Stemmer.Stemmer("english") if self.stem else None,
+            "stemmer": _english_stemmer() if self.stem else None,
             "token_pattern": self.token_pattern,
             "show_progress": False,
         }
