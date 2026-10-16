@@ -1,0 +1,35 @@
+{
+  "name": "bm25_stop_k11.5_b0.75_end_to_end_val",
+  "written_at": "2026-10-13T16:35:06+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "tokenizer": "stop",
+    "k1": 1.5,
+    "b": 0.75,
+    "depth": 1000,
+    "split": "val",
+    "seed": 42,
+    "n_empty_queries": 0,
+    "mode": "end_to_end"
+  },
+  "metrics": {
+    "ndcg@5": 0.29474709936038196,
+    "ndcg@10": 0.29015294379528356,
+    "recall@100": 0.5338994099835763,
+    "mrr": 0.43332789649591863,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0,
+    "recall@200": 0.6072853162950486,
+    "recall@500": 0.6904238095886701,
+    "recall@1000": 0.7457515766267764,
+    "build_seconds": 97.33794440003112,
+    "index_mb": 261.015706,
+    "latency_p50_ms": 28.858400182798505,
+    "latency_p95_ms": 41.8566000415012
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/n4hvhuel",
+  "git": {
+    "commit": "e78ec20bc8bb3f3b05f398567a06363d8c72f092",
+    "uncommitted_changes": false
+  }
+}

@@ -5,7 +5,15 @@ Do not edit by hand. Every row is read against the random baseline in the same m
 
 | setup | mode | split | ndcg@5 | ndcg@10 | recall@100 | mrr | run |
 |---|---|---|---|---|---|---|---|
+| bm25_plain_k11.5_b0.75_end_to_end_val | end_to_end | val | 0.2959 | 0.2897 | 0.5337 | 0.4329 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/jdhis339) |
+| bm25_stem_k11.5_b0.75_end_to_end_val | end_to_end | val | 0.3108 | 0.3071 | 0.5764 | 0.4505 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/pmbfdd4q) |
+| bm25_stop_k11.5_b0.75_end_to_end_val | end_to_end | val | 0.2947 | 0.2902 | 0.5339 | 0.4333 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/n4hvhuel) |
+| bm25_stop_stem_k11.5_b0.75_end_to_end_val | end_to_end | val | 0.3126 | 0.3083 | 0.5774 | 0.4531 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/j8ica329) |
 | random_corpus | end_to_end | val | 0.0000 | 0.0000 | 0.0001 | 0.0000 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/4yfzl2lk) |
+| bm25_plain_k11.5_b0.75_judged_val | judged | val | 0.6369 | 0.6911 | 0.9999 | 0.7473 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/smdzsaiy) |
+| bm25_stem_k11.5_b0.75_judged_val | judged | val | 0.6482 | 0.7004 | 0.9999 | 0.7549 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/acfdq9bp) |
+| bm25_stop_k11.5_b0.75_judged_val | judged | val | 0.6364 | 0.6913 | 0.9999 | 0.7479 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/l0pic8l9) |
+| bm25_stop_stem_k11.5_b0.75_judged_val | judged | val | 0.6470 | 0.7007 | 0.9999 | 0.7555 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/bss2e9gu) |
 | oracle | judged | val | 1.0000 | 1.0000 | 1.0000 | 1.0000 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/h1b70lxr) |
 | random | judged | val | 0.5004 | 0.5742 | 0.9999 | 0.6142 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/2mocjhqb) |
 | title_length | judged | val | 0.4716 | 0.5559 | 0.9999 | 0.5664 | [W&B](https://wandb.ai/mridul47-esci/product-search-ranking/runs/rfpn72dg) |

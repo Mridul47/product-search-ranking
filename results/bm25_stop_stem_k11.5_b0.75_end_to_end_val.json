@@ -1,0 +1,35 @@
+{
+  "name": "bm25_stop_stem_k11.5_b0.75_end_to_end_val",
+  "written_at": "2026-10-16T10:38:23+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "tokenizer": "stop_stem",
+    "k1": 1.5,
+    "b": 0.75,
+    "depth": 1000,
+    "split": "val",
+    "seed": 42,
+    "n_empty_queries": 0,
+    "mode": "end_to_end"
+  },
+  "metrics": {
+    "ndcg@5": 0.3125607778681737,
+    "ndcg@10": 0.30831158937910935,
+    "recall@100": 0.5774412210574449,
+    "mrr": 0.4531398221051196,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0,
+    "recall@200": 0.6505680002604873,
+    "recall@500": 0.7335597371937459,
+    "recall@1000": 0.787993834709868,
+    "build_seconds": 146.30063279997557,
+    "index_mb": 247.989497,
+    "latency_p50_ms": 34.12054991349578,
+    "latency_p95_ms": 52.37633483484387
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/j8ica329",
+  "git": {
+    "commit": "e78ec20bc8bb3f3b05f398567a06363d8c72f092",
+    "uncommitted_changes": false
+  }
+}
