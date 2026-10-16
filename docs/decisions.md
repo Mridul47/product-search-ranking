@@ -183,3 +183,22 @@ Measured on the validation split (2,089 queries, seed 42):
 
 Any judged-set result is read against the random row. Judged-set Recall@100 is
 below 1.0 only because a few queries have more than 100 judged products.
+
+## D13: BM25 tokenisation
+
+Decision: BM25 uses lowercase tokens plus English stemming (PyStemmer), with no stopword removal. The pattern keeps tokens of two or more word characters. k1 and b are set separately in D14 after the sweep.
+
+Measured on the validation split (2,089 queries, seed 42, k1 1.5, b 0.75, top 1000 per query, end-to-end mode):
+
+| setup     | Recall@100 | Recall@1000 | NDCG@10 | NDCG@5 | MRR    | index MB | build s |
+| --------- | ---------- | ----------- | ------- | ------ | ------ | -------- | ------- |
+| plain     | 0.5337     | 0.7456      | 0.2897  | 0.2959 | 0.4329 | 294      | 105     |
+| stop      | 0.5339     | 0.7458      | 0.2902  | 0.2947 | 0.4333 | 261      | 97      |
+| stem      | 0.5764     | 0.7876      | 0.3071  | 0.3108 | 0.4505 | 281      | 141     |
+| stop_stem | 0.5774     | 0.7880      | 0.3083  | 0.3126 | 0.4531 | 248      | 146     |
+
+Reasoning. The rule was fixed before the runs: pick the highest end-to-end Recall@100, and give ties within 0.005 to the simpler or faster setting. Stemming adds 0.043 to Recall@100 and moves every metric the same way. Stopword removal adds 0.0002 alone. Stop plus stem beats stem by 0.0011, which is inside the tie band, so the simpler setting (stem) is kept. No paired significance test was run. The cause of the stemming gain has not been investigated and is left to the error analysis.
+
+Judged-set NDCG@10 is 0.6911 for plain and 0.6913 for stop. It is read against the random row in D12 (0.5742). Latency differed by more than the settings could explain between runs of the same code, so it is not used for this choice. Latency is measured on an idle machine in the Phase 13 benchmark.
+
+Evidence: `results/bm25_*_end_to_end_val.json` and `results/bm25_*_judged_val.json`, linked to W&B.

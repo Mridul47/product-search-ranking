@@ -1,0 +1,28 @@
+{
+  "name": "bm25_stop_stem_k11.5_b0.75_judged_val",
+  "written_at": "2026-10-16T10:38:26+00:00",
+  "config_fingerprint": "f86979b4ea86",
+  "params": {
+    "tokenizer": "stop_stem",
+    "k1": 1.5,
+    "b": 0.75,
+    "depth": 1000,
+    "split": "val",
+    "seed": 42,
+    "n_empty_queries": 0,
+    "mode": "judged"
+  },
+  "metrics": {
+    "ndcg@5": 0.6469551553397962,
+    "ndcg@10": 0.7007377808385175,
+    "recall@100": 0.9999394053238484,
+    "mrr": 0.7554553636511865,
+    "n_queries": 2089.0,
+    "n_queries_recall": 2089.0
+  },
+  "wandb_url": "https://wandb.ai/mridul47-esci/product-search-ranking/runs/bss2e9gu",
+  "git": {
+    "commit": "e78ec20bc8bb3f3b05f398567a06363d8c72f092",
+    "uncommitted_changes": false
+  }
+}
