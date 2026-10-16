@@ -529,10 +529,12 @@ name = "esci"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "bm25s" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pyarrow" },
     { name = "pydantic" },
+    { name = "pystemmer" },
     { name = "python-dotenv" },
     { name = "pyyaml" },
     { name = "tqdm" },
@@ -553,9 +555,7 @@ ranking = [
     { name = "lightgbm" },
 ]
 retrieval = [
-    { name = "bm25s" },
     { name = "faiss-cpu" },
-    { name = "pystemmer" },
     { name = "sentence-transformers" },
 ]
 
@@ -570,7 +570,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bm25s", marker = "extra == 'retrieval'", specifier = ">=0.2" },
+    { name = "bm25s", specifier = ">=0.2" },
     { name = "faiss-cpu", marker = "extra == 'retrieval'", specifier = ">=1.8" },
     { name = "fastapi", marker = "extra == 'api'", specifier = ">=0.110" },
     { name = "httpx", marker = "extra == 'api'", specifier = ">=0.27" },
@@ -580,7 +580,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2" },
     { name = "pyarrow", specifier = ">=15" },
     { name = "pydantic", specifier = ">=2.6" },
-    { name = "pystemmer", marker = "extra == 'retrieval'", specifier = ">=2.2" },
+    { name = "pystemmer", specifier = ">=2.2" },
     { name = "python-dotenv", specifier = ">=1.0" },
     { name = "pyyaml", specifier = ">=6" },
     { name = "ranx", marker = "extra == 'eval'", specifier = ">=0.3.19" },
